@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.DefaultComboBoxModel;
 
 public class DialogMantAlumno extends JDialog {
 
@@ -126,6 +127,7 @@ public class DialogMantAlumno extends JDialog {
 		txtCelular.setColumns(10);
 		
 		cboEstado = new JComboBox();
+		cboEstado.setModel(new DefaultComboBoxModel(new String[] {"Registrado", "Matriculado", "Retirado"}));
 		cboEstado.setBounds(66, 143, 86, 22);
 		getContentPane().add(cboEstado);
 		
