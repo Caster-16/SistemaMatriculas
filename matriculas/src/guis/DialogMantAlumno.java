@@ -3,8 +3,6 @@ package guis;
 import java.awt.EventQueue;
 
 import javax.swing.JDialog;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -12,6 +10,8 @@ import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.DefaultComboBoxModel;
+
+import javax.swing.JSeparator;
 
 public class DialogMantAlumno extends JDialog {
 
@@ -31,9 +31,10 @@ public class DialogMantAlumno extends JDialog {
 	private JTextField txtApellidos;
 	private JTextField txtDni;
 	private JTextField txtCelular;
-	private JComboBox cboEstado;
+	private JComboBox <String> cboEstado;
 	private JScrollPane scrollPane;
 	private JTable table;
+	private JSeparator separator;
 
 	/**
 	 * Launch the application.
@@ -70,19 +71,19 @@ public class DialogMantAlumno extends JDialog {
 		getContentPane().add(lblNombre);
 		
 		lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setBounds(10, 72, 46, 14);
+		lblApellidos.setBounds(186, 47, 46, 14);
 		getContentPane().add(lblApellidos);
 		
 		lblDni = new JLabel("DNI");
-		lblDni.setBounds(10, 97, 46, 14);
+		lblDni.setBounds(10, 72, 46, 14);
 		getContentPane().add(lblDni);
 		
 		lblCelular = new JLabel("Celular");
-		lblCelular.setBounds(10, 122, 46, 14);
+		lblCelular.setBounds(10, 100, 46, 14);
 		getContentPane().add(lblCelular);
 		
 		lblEstado = new JLabel("Estado");
-		lblEstado.setBounds(10, 147, 46, 14);
+		lblEstado.setBounds(10, 133, 46, 14);
 		getContentPane().add(lblEstado);
 		
 		btnAdicionar = new JButton("Adicionar");
@@ -90,53 +91,57 @@ public class DialogMantAlumno extends JDialog {
 		getContentPane().add(btnAdicionar);
 		
 		btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(391, 43, 89, 23);
+		btnConsultar.setBounds(391, 63, 89, 23);
 		getContentPane().add(btnConsultar);
 		
 		btnModificar = new JButton("Modificar");
-		btnModificar.setBounds(391, 68, 89, 23);
+		btnModificar.setBounds(391, 88, 89, 23);
 		getContentPane().add(btnModificar);
 		
 		btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(391, 93, 89, 23);
+		btnEliminar.setBounds(391, 113, 89, 23);
 		getContentPane().add(btnEliminar);
 		
 		txtCodigo = new JTextField();
-		txtCodigo.setBounds(66, 19, 86, 20);
+		txtCodigo.setBounds(66, 19, 110, 20);
 		getContentPane().add(txtCodigo);
 		txtCodigo.setColumns(10);
 		
 		txtNombre = new JTextField();
-		txtNombre.setBounds(66, 44, 149, 20);
+		txtNombre.setBounds(66, 44, 110, 20);
 		getContentPane().add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		txtApellidos = new JTextField();
-		txtApellidos.setBounds(66, 69, 183, 20);
+		txtApellidos.setBounds(242, 44, 110, 20);
 		getContentPane().add(txtApellidos);
 		txtApellidos.setColumns(10);
 		
 		txtDni = new JTextField();
-		txtDni.setBounds(66, 94, 86, 20);
+		txtDni.setBounds(66, 69, 110, 20);
 		getContentPane().add(txtDni);
 		txtDni.setColumns(10);
 		
 		txtCelular = new JTextField();
-		txtCelular.setBounds(66, 119, 86, 20);
+		txtCelular.setBounds(66, 97, 110, 20);
 		getContentPane().add(txtCelular);
 		txtCelular.setColumns(10);
 		
-		cboEstado = new JComboBox();
-		cboEstado.setModel(new DefaultComboBoxModel(new String[] {"Registrado", "Matriculado", "Retirado"}));
-		cboEstado.setBounds(66, 143, 86, 22);
+		cboEstado = new JComboBox<String>();
+		cboEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Registrado", "Matriculado", "Retirado"}));
+		cboEstado.setBounds(66, 129, 86, 22);
 		getContentPane().add(cboEstado);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 191, 470, 144);
+		scrollPane.setBounds(10, 175, 470, 160);
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		scrollPane.setColumnHeaderView(table);
+		scrollPane.setViewportView(table);
+		
+		separator = new JSeparator();
+		separator.setBounds(391, 47, 89, 2);
+		getContentPane().add(separator);
 
 	}
 }
