@@ -1,0 +1,109 @@
+package guis;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import javax.swing.JMenuItem;
+
+public class MenuPrincipal extends JFrame implements MouseListener {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JMenuBar menu;
+	private JMenu mnMantenimiento;
+	private JMenu mnRegistro;
+	private JMenu mnConsulta;
+	private JMenu mnReporte;
+	private JMenuItem mntmAlumno;
+	private JMenuItem mntmCurso;
+	private JMenuItem mntmMatricula;
+	private JMenuItem mntmRetiro;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MenuPrincipal frame = new MenuPrincipal();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MenuPrincipal() {
+		setTitle("Sistema de matriculas");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		menu = new JMenuBar();
+		menu.setBounds(0, 0, 424, 22);
+		contentPane.add(menu);
+		
+		mnMantenimiento = new JMenu("Mantenimiento");
+		mnMantenimiento.addMouseListener(this);
+		menu.add(mnMantenimiento);
+		
+		mntmAlumno = new JMenuItem("Alumno");
+		mntmAlumno.addMouseListener(this);
+		mnMantenimiento.add(mntmAlumno);
+		
+		mntmCurso = new JMenuItem("Curso");
+		mntmCurso.addMouseListener(this);
+		mnMantenimiento.add(mntmCurso);
+		
+		mnRegistro = new JMenu("Registro");
+		menu.add(mnRegistro);
+		
+		mntmMatricula = new JMenuItem("Matriucla");
+		mnRegistro.add(mntmMatricula);
+		
+		mntmRetiro = new JMenuItem("Retiro");
+		mnRegistro.add(mntmRetiro);
+		
+		mnConsulta = new JMenu("Consulta");
+		menu.add(mnConsulta);
+		
+		mnReporte = new JMenu("Reporte");
+		menu.add(mnReporte);
+
+	}
+	public void mouseClicked(MouseEvent e) {
+		if (e.getSource() == mntmCurso) {
+			mouseClickedMntmCurso(e);
+		}
+		if (e.getSource() == mntmAlumno) {
+			mouseClickedMntmAlumno(e);
+		}
+
+	}
+	public void mouseEntered(MouseEvent e) {
+	}
+	public void mouseExited(MouseEvent e) {
+	}
+	public void mousePressed(MouseEvent e) {
+	}
+	public void mouseReleased(MouseEvent e) {
+	}
+	protected void mouseClickedMntmAlumno(MouseEvent e) {
+	}
+	protected void mouseClickedMntmCurso(MouseEvent e) {
+	}
+}
