@@ -22,6 +22,9 @@ public class DialogRegRetiro extends JDialog {
 	private JTextField txtCurso;
 	private JTextField txtAlumno;
 	private JTable table;
+	private JButton btnAdicionar;
+	private JButton btnConsultar;
+	private JButton btnModificar;
 
 	/**
 	 * Launch the application.
@@ -69,17 +72,17 @@ public class DialogRegRetiro extends JDialog {
 			txtAlumno.setColumns(10);
 		}
 		{
-			JButton btnAdicionar = new JButton("Adicionar");
+			btnAdicionar = new JButton("Adicionar");
 			btnAdicionar.setBounds(24, 79, 89, 23);
 			contentPanel.add(btnAdicionar);
 		}
 		{
-			JButton btnConsultar = new JButton("Consultar");
+			btnConsultar = new JButton("Consultar");
 			btnConsultar.setBounds(123, 79, 89, 23);
 			contentPanel.add(btnConsultar);
 		}
 		{
-			JButton btnModificar = new JButton("Modificar");
+			btnModificar = new JButton("Modificar");
 			btnModificar.setBounds(222, 79, 89, 23);
 			contentPanel.add(btnModificar);
 		}

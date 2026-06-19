@@ -22,6 +22,8 @@ public class DialogConsAlumCurs extends JDialog {
 	private JTable table;
 	private JTextField txtConsultarAlum;
 	private JTextField txtConsultarCurs;
+	private JButton btnConsultarAlum;
+	private JButton btnConsultarCurs;
 
 	/**
 	 * Launch the application.
@@ -60,23 +62,23 @@ public class DialogConsAlumCurs extends JDialog {
 			}
 			{
 				txtCodigoAlum = new JTextField();
-				txtCodigoAlum.setBounds(93, 22, 86, 20);
+				txtCodigoAlum.setBounds(82, 22, 106, 20);
 				panel.add(txtCodigoAlum);
 				txtCodigoAlum.setColumns(10);
 			}
 			{
 				JLabel lblConsultarAlum = new JLabel("Alumno");
-				lblConsultarAlum.setBounds(26, 51, 46, 14);
+				lblConsultarAlum.setBounds(26, 56, 46, 14);
 				panel.add(lblConsultarAlum);
 			}
 			{
 				txtConsultarAlum = new JTextField();
-				txtConsultarAlum.setBounds(93, 53, 86, 20);
+				txtConsultarAlum.setBounds(82, 53, 106, 20);
 				panel.add(txtConsultarAlum);
 				txtConsultarAlum.setColumns(10);
 			}
 			{
-				JButton btnConsultarAlum = new JButton("Consultar");
+				btnConsultarAlum = new JButton("Consultar");
 				btnConsultarAlum.setBounds(59, 94, 89, 23);
 				panel.add(btnConsultarAlum);
 			}
@@ -94,7 +96,7 @@ public class DialogConsAlumCurs extends JDialog {
 			}
 			{
 				txtCodigoCurs = new JTextField();
-				txtCodigoCurs.setBounds(102, 28, 86, 20);
+				txtCodigoCurs.setBounds(81, 28, 107, 20);
 				panel.add(txtCodigoCurs);
 				txtCodigoCurs.setColumns(10);
 			}
@@ -105,12 +107,12 @@ public class DialogConsAlumCurs extends JDialog {
 			}
 			{
 				txtConsultarCurs = new JTextField();
-				txtConsultarCurs.setBounds(102, 53, 86, 20);
+				txtConsultarCurs.setBounds(81, 53, 107, 20);
 				panel.add(txtConsultarCurs);
 				txtConsultarCurs.setColumns(10);
 			}
 			{
-				JButton btnConsultarCurs = new JButton("Consultar");
+				btnConsultarCurs = new JButton("Consultar");
 				btnConsultarCurs.setBounds(68, 94, 89, 23);
 				panel.add(btnConsultarCurs);
 			}

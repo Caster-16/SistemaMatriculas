@@ -6,6 +6,7 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -32,7 +33,8 @@ public class DialogMantAlumno extends JDialog {
 	private JTextField txtCelular;
 	private JComboBox <String> cboEstado;
 	private JScrollPane scrollPane;
-	private JTable table;
+	private JTable tblTabla;
+	private DefaultTableModel prueba;
 
 	/**
 	 * Launch the application.
@@ -127,15 +129,18 @@ public class DialogMantAlumno extends JDialog {
 		
 		cboEstado = new JComboBox<String>();
 		cboEstado.setModel(new DefaultComboBoxModel<String>(new String[] {"Registrado", "Matriculado", "Retirado"}));
-		cboEstado.setBounds(66, 129, 86, 22);
+		cboEstado.setBounds(66, 129, 110, 22);
 		getContentPane().add(cboEstado);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 221, 470, 114);
 		getContentPane().add(scrollPane);
 		
-		table = new JTable();
-		scrollPane.setViewportView(table);
+		tblTabla = new JTable();
+		tblTabla.setFillsViewportHeight(true);
+		scrollPane.setViewportView(tblTabla);
+		
+		prueba = new DefaultTableModel();
 
 	}
 }

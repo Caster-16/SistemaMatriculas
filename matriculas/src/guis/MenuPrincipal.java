@@ -107,9 +107,7 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 		if (e.getSource() == mntmReportes) {
 			actionPerformedMntmReportes(e);
 		}
-		if (e.getSource() == mnReporte) {
-			actionPerformedMnReporte(e);
-		}
+
 		if (e.getSource() == mntmConsMatRetiros) {
 			actionPerformedMntmConsMatRetiros(e);
 		}
@@ -179,4 +177,5 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 		x.setModal(true);
 		x.setVisible(true);
 	}
+	
 }

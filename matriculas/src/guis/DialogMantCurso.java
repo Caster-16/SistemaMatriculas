@@ -111,6 +111,7 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 		txtHoras.setColumns(10);
 		
 		btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.addActionListener(this);
 		btnAdicionar.setBounds(20, 165, 89, 23);
 		contentPanel.add(btnAdicionar);
 		
@@ -142,6 +143,9 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 		scrollPane.setViewportView(table);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnAdicionar) {
+			actionPerformedBtnAdicionar(e);
+		}
 		if (e.getSource() == btnEliminar) {
 			actionPerformedBtnEliminar(e);
 		}
@@ -162,5 +166,9 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 	public void mouseReleased(MouseEvent e) {
 	}
 	protected void mouseClickedBtnEliminar(MouseEvent e) {
+	}
+	protected void actionPerformedBtnAdicionar(ActionEvent e) 
+	{
+		txtAsignatura.setEditable(false);
 	}
 }

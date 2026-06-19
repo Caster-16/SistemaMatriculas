@@ -45,7 +45,7 @@ public class DialogRegMatricula extends JDialog {
 	 * Create the dialog.
 	 */
 	public DialogRegMatricula() {
-		setTitle("Registro | Matricula");
+		setTitle("Registro | Matrícula");
 		setBounds(100, 100, 514, 336);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

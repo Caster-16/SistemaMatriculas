@@ -18,6 +18,8 @@ public class DialogReporte extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTable table;
+	private JButton btnNewButton;
+	private JComboBox<String> comboBox;
 
 	/**
 	 * Launch the application.
@@ -48,13 +50,13 @@ public class DialogReporte extends JDialog {
 			contentPanel.add(lblNewLabel);
 		}
 		{
-			JComboBox<String> comboBox = new JComboBox<String>();
+			comboBox = new JComboBox<String>();
 			comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Seleccione", "Matrículas Pendientes", "Matrículas Vigentes", "Alumnos por Curso"}));
-			comboBox.setBounds(154, 25, 134, 22);
+			comboBox.setBounds(123, 25, 165, 22);
 			contentPanel.add(comboBox);
 		}
 		{
-			JButton btnNewButton = new JButton("Generar");
+			btnNewButton = new JButton("Generar");
 			btnNewButton.setBounds(308, 25, 89, 23);
 			contentPanel.add(btnNewButton);
 		}

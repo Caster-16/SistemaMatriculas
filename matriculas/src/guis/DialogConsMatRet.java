@@ -14,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.EtchedBorder;
+import java.awt.Color;
 
 public class DialogConsMatRet extends JDialog implements ActionListener {
 
@@ -47,7 +49,8 @@ public class DialogConsMatRet extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DialogConsMatRet() {
-		setTitle("Consulta | Matriculas - Retiros");
+		setResizable(false);
+		setTitle("Consulta | Matrículas - Retiros");
 		setBounds(100, 100, 450, 334);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -55,7 +58,7 @@ public class DialogConsMatRet extends JDialog implements ActionListener {
 		contentPanel.setLayout(null);
 		
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Matriculas", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Matr\u00EDculas", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setBounds(10, 11, 195, 122);
 		contentPanel.add(panel);
 		panel.setLayout(null);
