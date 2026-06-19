@@ -26,6 +26,7 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 	private JMenuItem mntmRetiro;
 	private JMenuItem mntmConsAlumCursos;
 	private JMenuItem mntmConsMatRetiros;
+	private JMenuItem mntmReportes;
 
 	/**
 	 * Launch the application.
@@ -95,10 +96,17 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 		mnReporte = new JMenu("Reporte");
 		mnReporte.addActionListener(this);
 		menu.add(mnReporte);
+		
+		mntmReportes = new JMenuItem("Reportes");
+		mntmReportes.addActionListener(this);
+		mnReporte.add(mntmReportes);
 
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmReportes) {
+			actionPerformedMntmReportes(e);
+		}
 		if (e.getSource() == mnReporte) {
 			actionPerformedMnReporte(e);
 		}
@@ -163,7 +171,8 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 		x.setModal(true);
 		x.setVisible(true);
 	}
-	protected void actionPerformedMnReporte(ActionEvent e) 
+
+	protected void actionPerformedMntmReportes(ActionEvent e) 
 	{
 		DialogReporte x = new DialogReporte();
 		x.setLocationRelativeTo(this);
