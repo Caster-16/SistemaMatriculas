@@ -24,6 +24,8 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 	private JMenuItem mntmCurso;
 	private JMenuItem mntmMatricula;
 	private JMenuItem mntmRetiro;
+	private JMenuItem mntmConsAlumCursos;
+	private JMenuItem mntmConsMatRetiros;
 
 	/**
 	 * Launch the application.
@@ -47,14 +49,14 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 	public MenuPrincipal() {
 		setTitle("Sistema de matriculas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 483, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		menu = new JMenuBar();
-		menu.setBounds(0, 0, 424, 22);
+		menu.setBounds(0, 0, 467, 22);
 		contentPane.add(menu);
 		
 		mnMantenimiento = new JMenu("Mantenimiento");
@@ -82,12 +84,30 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 		mnConsulta = new JMenu("Consulta");
 		menu.add(mnConsulta);
 		
+		mntmConsAlumCursos = new JMenuItem("Alumnos | cursos");
+		mntmConsAlumCursos.addActionListener(this);
+		mnConsulta.add(mntmConsAlumCursos);
+		
+		mntmConsMatRetiros = new JMenuItem("Matricula | Retiros");
+		mntmConsMatRetiros.addActionListener(this);
+		mnConsulta.add(mntmConsMatRetiros);
+		
 		mnReporte = new JMenu("Reporte");
+		mnReporte.addActionListener(this);
 		menu.add(mnReporte);
 
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mnReporte) {
+			actionPerformedMnReporte(e);
+		}
+		if (e.getSource() == mntmConsMatRetiros) {
+			actionPerformedMntmConsMatRetiros(e);
+		}
+		if (e.getSource() == mntmConsAlumCursos) {
+			actionPerformedMntmConsAlumCursos(e);
+		}
 		if (e.getSource() == mntmRetiro) {
 			actionPerformedMntmRetiro(e);
 		}
@@ -124,6 +144,30 @@ public class MenuPrincipal extends JFrame implements  ActionListener {
 	}
 	protected void actionPerformedMntmRetiro(ActionEvent e) 
 	{
-		
+		DialogRegRetiro x = new DialogRegRetiro();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmConsAlumCursos(ActionEvent e) 
+	{
+		DialogConsAlumCurs x = new DialogConsAlumCurs();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmConsMatRetiros(ActionEvent e) 
+	{
+		DialogConsMatRet x = new DialogConsMatRet();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMnReporte(ActionEvent e) 
+	{
+		DialogReporte x = new DialogReporte();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
 	}
 }

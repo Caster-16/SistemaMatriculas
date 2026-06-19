@@ -10,12 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JSeparator;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
-import javax.swing.SwingConstants;
+
+import javax.swing.border.TitledBorder;
 
 public class DialogMantCurso extends JDialog implements ActionListener, MouseListener {
 
@@ -35,7 +36,7 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 	private JButton btnConsultar;
 	private JButton btnModificar;
 	private JButton btnEliminar;
-	private JSeparator separator_1;
+	private JPanel panel;
 	private JScrollPane scrollPane;
 	private JTable table;
 
@@ -58,7 +59,7 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 	public DialogMantCurso() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setTitle("Mantenimiento | Curso");
-		setBounds(100, 100, 450, 343);
+		setBounds(100, 100, 450, 395);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -90,7 +91,7 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 		txtCodgigo.setColumns(10);
 		
 		txtAsignatura = new JTextField();
-		txtAsignatura.setBounds(84, 46, 86, 20);
+		txtAsignatura.setBounds(84, 46, 169, 20);
 		contentPanel.add(txtAsignatura);
 		txtAsignatura.setColumns(10);
 		
@@ -110,31 +111,32 @@ public class DialogMantCurso extends JDialog implements ActionListener, MouseLis
 		txtHoras.setColumns(10);
 		
 		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(335, 20, 89, 23);
+		btnAdicionar.setBounds(20, 165, 89, 23);
 		contentPanel.add(btnAdicionar);
 		
 		btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(335, 65, 89, 23);
+		btnConsultar.setBounds(124, 165, 89, 23);
 		contentPanel.add(btnConsultar);
 		
 		btnModificar = new JButton("Modificar");
-		btnModificar.setBounds(335, 90, 89, 23);
+		btnModificar.setBounds(223, 165, 89, 23);
 		contentPanel.add(btnModificar);
 		
 		btnEliminar = new JButton("Eliminar");
 		btnEliminar.addMouseListener(this);
 		btnEliminar.addActionListener(this);
-		btnEliminar.setBounds(335, 115, 89, 23);
+		btnEliminar.setBounds(322, 165, 89, 23);
 		contentPanel.add(btnEliminar);
 		
-		separator_1 = new JSeparator();
-		separator_1.setOrientation(SwingConstants.VERTICAL);
-		separator_1.setBounds(323, 24, 2, 114);
-		contentPanel.add(separator_1);
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBounds(10, 199, 414, 154);
+		contentPanel.add(panel);
+		panel.setLayout(null);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 157, 414, 136);
-		contentPanel.add(scrollPane);
+		scrollPane.setBounds(10, 21, 394, 122);
+		panel.add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);

@@ -11,7 +11,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.DefaultComboBoxModel;
 
-import javax.swing.JSeparator;
 
 public class DialogMantAlumno extends JDialog {
 
@@ -34,7 +33,6 @@ public class DialogMantAlumno extends JDialog {
 	private JComboBox <String> cboEstado;
 	private JScrollPane scrollPane;
 	private JTable table;
-	private JSeparator separator;
 
 	/**
 	 * Launch the application.
@@ -71,7 +69,7 @@ public class DialogMantAlumno extends JDialog {
 		getContentPane().add(lblNombre);
 		
 		lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setBounds(186, 47, 46, 14);
+		lblApellidos.setBounds(186, 47, 66, 14);
 		getContentPane().add(lblApellidos);
 		
 		lblDni = new JLabel("DNI");
@@ -87,19 +85,19 @@ public class DialogMantAlumno extends JDialog {
 		getContentPane().add(lblEstado);
 		
 		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(391, 18, 89, 23);
+		btnAdicionar.setBounds(31, 178, 89, 23);
 		getContentPane().add(btnAdicionar);
 		
 		btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(391, 63, 89, 23);
+		btnConsultar.setBounds(143, 178, 89, 23);
 		getContentPane().add(btnConsultar);
 		
 		btnModificar = new JButton("Modificar");
-		btnModificar.setBounds(391, 88, 89, 23);
+		btnModificar.setBounds(242, 178, 89, 23);
 		getContentPane().add(btnModificar);
 		
 		btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(391, 113, 89, 23);
+		btnEliminar.setBounds(349, 178, 89, 23);
 		getContentPane().add(btnEliminar);
 		
 		txtCodigo = new JTextField();
@@ -113,7 +111,7 @@ public class DialogMantAlumno extends JDialog {
 		txtNombre.setColumns(10);
 		
 		txtApellidos = new JTextField();
-		txtApellidos.setBounds(242, 44, 110, 20);
+		txtApellidos.setBounds(262, 44, 151, 20);
 		getContentPane().add(txtApellidos);
 		txtApellidos.setColumns(10);
 		
@@ -133,15 +131,11 @@ public class DialogMantAlumno extends JDialog {
 		getContentPane().add(cboEstado);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 175, 470, 160);
+		scrollPane.setBounds(10, 221, 470, 114);
 		getContentPane().add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
-		
-		separator = new JSeparator();
-		separator.setBounds(391, 47, 89, 2);
-		getContentPane().add(separator);
 
 	}
 }

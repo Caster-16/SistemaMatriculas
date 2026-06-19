@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.border.TitledBorder;
 
 public class DialogRegMatricula extends JDialog {
 
@@ -23,6 +24,7 @@ public class DialogRegMatricula extends JDialog {
 	private JButton btnConsultar;
 	private JButton btnModificar;
 	private JButton btnEliminar;
+	private JPanel panel;
 	private JScrollPane scrollPane;
 	private JTable table;
 
@@ -70,24 +72,30 @@ public class DialogRegMatricula extends JDialog {
 		txtAlumno.setColumns(10);
 		
 		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setBounds(377, 7, 89, 23);
+		btnAdicionar.setBounds(54, 95, 89, 23);
 		contentPanel.add(btnAdicionar);
 		
 		btnConsultar = new JButton("Consultar");
-		btnConsultar.setBounds(377, 44, 89, 23);
+		btnConsultar.setBounds(153, 95, 89, 23);
 		contentPanel.add(btnConsultar);
 		
 		btnModificar = new JButton("Modificar");
-		btnModificar.setBounds(377, 69, 89, 23);
+		btnModificar.setBounds(252, 95, 89, 23);
 		contentPanel.add(btnModificar);
 		
 		btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(377, 95, 89, 23);
+		btnEliminar.setBounds(356, 95, 89, 23);
 		contentPanel.add(btnEliminar);
 		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBounds(10, 129, 478, 157);
+		contentPanel.add(panel);
+		panel.setLayout(null);
+		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 143, 478, 143);
-		contentPanel.add(scrollPane);
+		scrollPane.setBounds(10, 22, 458, 124);
+		panel.add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
