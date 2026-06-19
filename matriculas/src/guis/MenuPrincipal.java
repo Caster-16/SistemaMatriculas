@@ -7,11 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class MenuPrincipal extends JFrame implements MouseListener {
+public class MenuPrincipal extends JFrame implements  ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -58,24 +58,25 @@ public class MenuPrincipal extends JFrame implements MouseListener {
 		contentPane.add(menu);
 		
 		mnMantenimiento = new JMenu("Mantenimiento");
-		mnMantenimiento.addMouseListener(this);
 		menu.add(mnMantenimiento);
 		
 		mntmAlumno = new JMenuItem("Alumno");
-		mntmAlumno.addMouseListener(this);
+		mntmAlumno.addActionListener(this);
 		mnMantenimiento.add(mntmAlumno);
 		
 		mntmCurso = new JMenuItem("Curso");
-		mntmCurso.addMouseListener(this);
+		mntmCurso.addActionListener(this);
 		mnMantenimiento.add(mntmCurso);
 		
 		mnRegistro = new JMenu("Registro");
 		menu.add(mnRegistro);
 		
 		mntmMatricula = new JMenuItem("Matriucla");
+		mntmMatricula.addActionListener(this);
 		mnRegistro.add(mntmMatricula);
 		
 		mntmRetiro = new JMenuItem("Retiro");
+		mntmRetiro.addActionListener(this);
 		mnRegistro.add(mntmRetiro);
 		
 		mnConsulta = new JMenu("Consulta");
@@ -85,25 +86,44 @@ public class MenuPrincipal extends JFrame implements MouseListener {
 		menu.add(mnReporte);
 
 	}
-	public void mouseClicked(MouseEvent e) {
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmRetiro) {
+			actionPerformedMntmRetiro(e);
+		}
+		if (e.getSource() == mntmMatricula) {
+			actionPerformedMntmMatricula(e);
+		}
 		if (e.getSource() == mntmCurso) {
-			mouseClickedMntmCurso(e);
+			actionPerformedMntmCurso(e);
 		}
 		if (e.getSource() == mntmAlumno) {
-			mouseClickedMntmAlumno(e);
+			actionPerformedMntmAlumno(e);
 		}
-
 	}
-	public void mouseEntered(MouseEvent e) {
+	protected void actionPerformedMntmAlumno(ActionEvent e) 
+	{
+		DialogMantAlumno x = new DialogMantAlumno();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
 	}
-	public void mouseExited(MouseEvent e) {
+	protected void actionPerformedMntmCurso(ActionEvent e) 
+	{
+		DialogMantCurso x = new DialogMantCurso();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
 	}
-	public void mousePressed(MouseEvent e) {
+	protected void actionPerformedMntmMatricula(ActionEvent e) 
+	{
+		DialogRegMatricula x = new DialogRegMatricula();
+		x.setLocationRelativeTo(this);
+		x.setModal(true);
+		x.setVisible(true);
 	}
-	public void mouseReleased(MouseEvent e) {
-	}
-	protected void mouseClickedMntmAlumno(MouseEvent e) {
-	}
-	protected void mouseClickedMntmCurso(MouseEvent e) {
+	protected void actionPerformedMntmRetiro(ActionEvent e) 
+	{
+		
 	}
 }
